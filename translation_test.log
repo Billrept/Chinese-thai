@@ -1,0 +1,294 @@
+INFO:__main__:Starting actual translation test...
+INFO:__main__:Loading model: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+INFO:__main__:Using device: mps
+Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+WARNING:huggingface_hub.file_download:Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+WARNING:huggingface_hub.file_download:Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+WARNING:huggingface_hub.file_download:Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+WARNING:huggingface_hub.file_download:Error while downloading from https://cdn-lfs-us-1.hf.co/repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V%7EgSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN%7EVHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+Trying to resume download...
+ERROR:__main__:Translation test failed: (MaxRetryError('HTTPSConnectionPool(host=\'cdn-lfs-us-1.hf.co\', port=443): Max retries exceeded with url: /repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V~gSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN~VHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31c0f2dc0>: Failed to resolve \'cdn-lfs-us-1.hf.co\' ([Errno 8] nodename nor servname provided, or not known)"))'), '(Request ID: 402c8d45-b2a6-4a4f-95d0-1c9092a49d61)')
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 754, in _error_catcher
+    yield
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 879, in _raw_read
+    data = self._fp_read(amt, read1=read1) if not fp_closed else b""
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 862, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 463, in read
+    n = self.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 507, in readinto
+    n = self.fp.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/socket.py", line 716, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1275, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1133, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 1066, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 955, in read
+    data = self._raw_read(amt)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 908, in _raw_read
+    self._fp.close()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 494, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 754, in _error_catcher
+    yield
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 879, in _raw_read
+    data = self._fp_read(amt, read1=read1) if not fp_closed else b""
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 862, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 463, in read
+    n = self.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 507, in readinto
+    n = self.fp.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/socket.py", line 716, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1275, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1133, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 1066, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 955, in read
+    data = self._raw_read(amt)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 908, in _raw_read
+    self._fp.close()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 494, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 754, in _error_catcher
+    yield
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 879, in _raw_read
+    data = self._fp_read(amt, read1=read1) if not fp_closed else b""
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 862, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 463, in read
+    n = self.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 507, in readinto
+    n = self.fp.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/socket.py", line 716, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1275, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1133, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 1066, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 955, in read
+    data = self._raw_read(amt)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 908, in _raw_read
+    self._fp.close()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 494, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 754, in _error_catcher
+    yield
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 879, in _raw_read
+    data = self._fp_read(amt, read1=read1) if not fp_closed else b""
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 862, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 463, in read
+    n = self.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/http/client.py", line 507, in readinto
+    n = self.fp.readinto(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/socket.py", line 716, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1275, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/ssl.py", line 1133, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 1066, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 955, in read
+    data = self._raw_read(amt)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 908, in _raw_read
+    self._fp.close()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 494, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x31c0f2dc0>: Failed to resolve 'cdn-lfs-us-1.hf.co' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Max retries exceeded with url: /repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V~gSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN~VHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31c0f2dc0>: Failed to resolve 'cdn-lfs-us-1.hf.co' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/phacharakimpha/CT-AI/test_real_translation.py", line 43, in test_actual_translation
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py", line 571, in from_pretrained
+    return model_class.from_pretrained(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/modeling_utils.py", line 309, in _wrapper
+    return func(*args, **kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/modeling_utils.py", line 4422, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/modeling_utils.py", line 1024, in _get_resolved_checkpoint_files
+    resolved_archive_file = cached_file(pretrained_model_name_or_path, filename, **cached_file_kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/utils/hub.py", line 312, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/utils/hub.py", line 557, in cached_files
+    raise e
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/transformers/utils/hub.py", line 470, in cached_files
+    hf_hub_download(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1008, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1161, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1725, in _download_to_tmp_and_move
+    http_get(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 511, in http_get
+    return http_get(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 511, in http_get
+    return http_get(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 511, in http_get
+    return http_get(
+  [Previous line repeated 1 more time]
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 420, in http_get
+    r = _request_wrapper(
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params, retry_on_exceptions=(), retry_on_status_codes=(429,))
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 310, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 96, in send
+    return super().send(request, *args, **kwargs)
+  File "/Users/phacharakimpha/CT-AI/.conda/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: (MaxRetryError('HTTPSConnectionPool(host=\'cdn-lfs-us-1.hf.co\', port=443): Max retries exceeded with url: /repos/80/3b/803bf3a0c970ed5c554d34586697cf1613396ec4158c96d5290742c7421a5d88/58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1748778695&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0ODc3ODY5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzgwLzNiLzgwM2JmM2EwYzk3MGVkNWM1NTRkMzQ1ODY2OTdjZjE2MTMzOTZlYzQxNThjOTZkNTI5MDc0MmM3NDIxYTVkODgvNTg4NTgyMzM1MTNkNzZiODcwM2U3MmVlZDZjZTE2ODA3YjUyMzMyODE4OGUxMzMyOTI1N2ZiOTU5NDQ2Mjk0NT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=lAt57NHOFqHBA8549WZbI79fGvTYDFxAyAfn5SSN-uBIYQvkxtgfKtk0V~gSTI4QFqZiUfe2zBLmWBCovOBx1d6iKgHMOFeCMFfjQxGAD9TQMpgvw7Ns9mXU1Se5ITqHmsFthoD1J8L5gJJ59BXIlc4kNszLRD-oJH7DhzflMtIqzkav9FCzQjCND56qOUWXloeTHXNuGkQFJoN~VHEBc5CGK3kDWjATH-8zDKzDLDTgrlxfOACgncbB7hZQ4pkROMzrPnw23mEC2nwm1UeHLq-DraFbTXh4m5BMlGSAO-FJaSWdqIcWccOmXGE7QCJ10hxAtItlAfI708Yjw210mA__&Key-Pair-Id=K24J24Z295AEI9 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31c0f2dc0>: Failed to resolve \'cdn-lfs-us-1.hf.co\' ([Errno 8] nodename nor servname provided, or not known)"))'), '(Request ID: 402c8d45-b2a6-4a4f-95d0-1c9092a49d61)')
