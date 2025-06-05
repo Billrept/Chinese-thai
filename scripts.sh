@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH -p compute                 #specify partition
 #SBATCH -N 1 -c 32                      #specify number of nodes
-#SBATCH -ntasks-per-node=1          #specify number of cpus
+#SBATCH --ntasks-per-node=1          #specify number of cpus
 #SBATCH -t 1:00:00                 #job time limit <hr:min:sec>
 #SBATCH -J my_first_job                #job name
 #SBATCH -A tb901117                #specify your account ID
