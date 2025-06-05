@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 #SBATCH -p compute                 #specify partition
 #SBATCH -N 1 -c 32                      #specify number of nodes
 #SBATCH --ntasks-per-node=1          #specify number of cpus
@@ -9,7 +9,7 @@
 ml Mamba/23.11.0-0
 conda activate 120_wangmak
 
-python finetune.py \
+srun python finetune.py \
   --output_dir ./results \
   --per_device_train_batch_size 2 \
   --per_device_eval_batch_size 2 \
