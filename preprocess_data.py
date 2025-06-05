@@ -3,13 +3,6 @@ import argparse
 from pathlib import Path
 
 def preprocess_jsonl(input_path: str, output_path: str, use_context: bool = False):
-    """
-    Reads JSONL lines with keys 'context', 'source', 'translation',
-    and writes out JSONL with keys 'prompt' and 'target'.
-
-    - If use_context=True, we prepend context (flattened) before the source.
-    - Otherwise, only use the source sentence (prefixing with an explicit instruction).
-    """
     in_path = Path(input_path)
     out_path = Path(output_path)
     assert in_path.exists(), f"Input file {in_path} not found."
