@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH -p gpu                     # specify GPU partition
 #SBATCH -N 1                       # number of nodes
-#SBATCH --gpu-per-task=1           # number of GPUs per task
 #SBATCH -ntasks-per-node=1
 #SBATCH -t 24:00:00                # job time limit <hr:min:sec>
 #SBATCH -A tb901117                # specify your account ID
