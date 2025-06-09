@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH -p gpu                     # specify GPU partition
 #SBATCH -N 1                       # number of nodes
-#SBATCH -ntasks-per-node=1
+#SBATCH --gpus-per-task=1         # number of CPU cores per task
+#SBATCH --ntasks-per-node=4
 #SBATCH -t 24:00:00                # job time limit <hr:min:sec>
 #SBATCH -A tb901117                # specify your account ID
 #SBATCH -J qwen_finetune           # job name
