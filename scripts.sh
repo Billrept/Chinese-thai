@@ -13,6 +13,7 @@
 ml Mamba/23.11.0-0
 
 conda activate 120_wangmak
+pip install -r requirements.txt
 
 # Run the fine-tuning script
 srun python3 finetune.py 
