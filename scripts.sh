@@ -9,8 +9,7 @@
 #SBATCH -e %j.err                  # error file
 
 # Load modules
-ml Mamba/23.11.0-0
-
+module load Mamba/23.11.0-0
 conda activate 120_wangmak
 
 # Run the fine-tuning script
