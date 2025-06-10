@@ -1,6 +1,13 @@
 import os
 import json
 import torch
+
+if not os.environ.get("HF_HUB_CACHE"):
+    cache_dir = "/disk/home/tb1033/tb901117/.cache/huggingface"
+    os.environ["HF_HUB_CACHE"] = cache_dir
+    os.environ["HF_HOME"] = cache_dir
+    os.environ["HF_DATASETS_CACHE"] = cache_dir
+
 from datasets import load_dataset, Dataset
 from transformers import (
     AutoTokenizer,
@@ -22,10 +29,6 @@ def load_jsonl_as_dataset(jsonl_path: str) -> Dataset:
     return Dataset.from_dict(data)
 
 def preprocess_function(examples, tokenizer, max_length=2048):
-    """
-    For causal LM fine-tuning, we concatenate prompt and target with special tokens.
-    The model learns to generate the target given the prompt.
-    """
     inputs = []
     for prompt, target in zip(examples["prompt"], examples["target"]):
         # Format as instruction-following format
