@@ -3,7 +3,7 @@ import json
 import torch
 
 if not os.environ.get("HF_HUB_CACHE"):
-    cache_dir = "/disk/home/tb1033/tb901117/.cache/huggingface"
+    cache_dir = "/disk/home/tb1033/.cache/huggingface"
     os.environ["HF_HUB_CACHE"] = cache_dir
     os.environ["HF_HOME"] = cache_dir
     os.environ["HF_DATASETS_CACHE"] = cache_dir
