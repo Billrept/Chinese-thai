@@ -13,7 +13,7 @@ os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
 
 def download_qwen_model():
     """Download Qwen model and tokenizer"""
-    model_name = "Qwen/Qwen2.5-8B-Instruct"
+    model_name = "Qwen/Qwen3-8B"
     
     print(f"Downloading {model_name}...")
     print(f"Cache directory: {os.environ['HF_HUB_CACHE']}")

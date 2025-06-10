@@ -98,7 +98,7 @@ def main():
     eval_dataset  = load_jsonl_as_dataset("dev_processed.jsonl")
 
     # 2. Load tokenizer & model
-    model_name = "Qwen/Qwen2.5-8B-Instruct"
+    model_name = "Qwen/Qwen3-8B"
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     
     # Add padding token if it doesn't exist
