@@ -70,7 +70,7 @@ def main():
         per_device_train_batch_size=1,
         per_device_eval_batch_size=1,
         gradient_accumulation_steps=8,
-        evaluation_strategy="steps",
+        eval_strategy="steps",  # Changed from evaluation_strategy
         eval_steps=500,
         save_strategy="steps",
         save_steps=1000,
@@ -83,7 +83,7 @@ def main():
         fp16=True,
         dataloader_num_workers=4,
         remove_unused_columns=False,
-        report_to="none",
+        report_to=None,  # Changed from "none" to None
         save_total_limit=3,
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
