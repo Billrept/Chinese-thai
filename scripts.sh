@@ -12,7 +12,7 @@
 # Load modules
 ml Mamba/23.11.0-0
 
-conda activate 120_wangmak
+conda activate test
 
 # Run the fine-tuning script
 python3 finetune.py 
