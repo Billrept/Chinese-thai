@@ -3,10 +3,11 @@
 import os
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# Set Hugging Face cache directories (following Lanta documentation)
-os.environ["HF_HUB_CACHE"] = "~/.cache/huggingface"
-os.environ["HF_HOME"] = "~/.cache/huggingface"
-os.environ["HF_DATASETS_CACHE"] = "~/.cache/huggingface"
+cache_dir = os.path.expanduser("~/.cache/huggingface")
+
+os.environ["HF_HUB_CACHE"] = cache_dir
+os.environ["HF_HOME"] = cache_dir
+os.environ["HF_DATASETS_CACHE"] = cache_dir
 
 # Enable fast transfer
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
