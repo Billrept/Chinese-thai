@@ -14,7 +14,7 @@
 # Load modules (following Lanta documentation)
 ml Mamba/23.11.0-0
 
-conda activate 120_wangmak
+conda activate test
 
 export HF_HUB_CACHE="/.cache/huggingface"
 export HF_HOME="/.cache/huggingface"
