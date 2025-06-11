@@ -14,13 +14,11 @@
 # Load modules (following Lanta documentation)
 ml Mamba/23.11.0-0
 
-# Activate conda environment
 conda activate 120_wangmak
 
-# Set Hugging Face cache directories (following Lanta best practices)
-export HF_HUB_CACHE="/disk/home/tb1033/tb901117/.cache/huggingface"
-export HF_HOME="/disk/home/tb1033/tb901117/.cache/huggingface"
-export HF_DATASETS_CACHE="/disk/home/tb1033/tb901117/.cache/huggingface"
+export HF_HUB_CACHE="/.cache/huggingface"
+export HF_HOME="/.cache/huggingface"
+export HF_DATASETS_CACHE="/.cache/huggingface"
 
 # Enable offline mode to prevent additional downloads during training
 export HF_DATASETS_OFFLINE=1
@@ -33,8 +31,5 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 export CUDA_VISIBLE_DEVICES=0
 export TOKENIZERS_PARALLELISM=false
 
-# Create cache directory if it doesn't exist
-mkdir -p "/disk/home/tb1033/tb901117/.cache/huggingface"
-
 # Run the fine-tuning script
-srun python finetune.py 
+srun python3 finetune.py 
