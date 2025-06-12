@@ -3,7 +3,7 @@ import json
 import torch
 
 if not os.environ.get("HF_HUB_CACHE"):
-    cache_dir = "~/.cache/huggingface"
+    cache_dir = os.path.expanduser("~/.cache/huggingface")
     os.environ["HF_HUB_CACHE"] = cache_dir
     os.environ["HF_HOME"] = cache_dir
     os.environ["HF_DATASETS_CACHE"] = cache_dir
@@ -100,19 +100,46 @@ def main():
     # 2. Load tokenizer & model
     model_name = "Qwen/Qwen3-8B"
     cache_dir = os.path.expanduser(os.environ.get("HF_HUB_CACHE", "~/.cache/huggingface"))
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=cache_dir)
     
+    try:
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, 
+            trust_remote_code=True, 
+            cache_dir=cache_dir,
+            local_files_only=True
+        )
+    except (OSError, ValueError):
+        print("Local tokenizer files not found, trying online...")
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+            cache_dir=cache_dir,
+            local_files_only=False
+        )
+
     # Add padding token if it doesn't exist
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        trust_remote_code=True,
-        torch_dtype=torch.float16,
-        device_map="auto",
-        cache_dir=cache_dir
-    )
+    try:
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+            torch_dtype=torch.float16,
+            device_map="auto",
+            cache_dir=cache_dir,
+            local_files_only=True  # Try local first
+        )
+    except (OSError, ValueError):
+        print("Local model files not found, trying online...")
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            trust_remote_code=True,
+            torch_dtype=torch.float16,
+            device_map="auto",
+            cache_dir=cache_dir,
+            local_files_only=False  # Allow online download
+        )
 
     # 3. Preprocess / tokenize
     model.resize_token_embeddings(len(tokenizer))  # just in case
