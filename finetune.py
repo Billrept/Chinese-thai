@@ -84,7 +84,7 @@ def main():
         lr_scheduler_type="cosine",
         weight_decay=0.01,
         bf16=True,  # Use bfloat16 instead of fp16 for better compatibility
-        dataloader_num_workers=2,  # Reduced workers to save memory
+        dataloader_num_workers=0,  # Set to 0 to avoid multiprocessing issues
         remove_unused_columns=False,
         report_to=None,  # Changed from "none" to None
         save_total_limit=2,  # Reduced to save disk space
@@ -94,6 +94,8 @@ def main():
         dataloader_pin_memory=False,  # Disable pin memory to save GPU memory
         gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
         optim="adamw_torch",  # Use standard AdamW for better compatibility with gradient checkpointing
+        ddp_find_unused_parameters=False,  # Optimize for single GPU
+        max_grad_norm=1.0,  # Add gradient clipping for stability
     )
 
     # 1. Load datasets
@@ -130,9 +132,10 @@ def main():
                 model = AutoModelForCausalLM.from_pretrained(
                     actual_model_path,
                     trust_remote_code=True,
-                    torch_dtype=torch.float16,
+                    torch_dtype=torch.bfloat16,  # Match the training dtype
                     device_map="auto",
-                    local_files_only=True
+                    local_files_only=True,
+                    low_cpu_mem_usage=True,  # Reduce CPU memory usage during loading
                 )
             else:
                 raise ValueError("No snapshot directories found in cached model")
@@ -155,7 +158,7 @@ def main():
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             trust_remote_code=True,
-            torch_dtype=torch.float16,
+            torch_dtype=torch.bfloat16,
             device_map="auto",
             cache_dir=cache_dir,
             local_files_only=False
