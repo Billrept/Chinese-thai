@@ -28,40 +28,44 @@ def load_jsonl_as_dataset(jsonl_path: str) -> Dataset:
             data["target"].append(obj["target"])
     return Dataset.from_dict(data)
 
-def preprocess_function(examples, tokenizer, max_length=2048):
+def preprocess_function(examples, tokenizer, max_length=1024):
     inputs = []
     for prompt, target in zip(examples["prompt"], examples["target"]):
         # Format as instruction-following format
         formatted_text = f"<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n{target}<|im_end|>"
         inputs.append(formatted_text)
     
-    # Tokenize the concatenated text
+    # Tokenize with padding to max_length
     model_inputs = tokenizer(
         inputs,
         truncation=True,
         max_length=max_length,
-        padding=False,  # We'll pad in the data collator
+        padding="max_length",  # Add consistent padding to all examples
         return_attention_mask=True,
     )
     
-    # For causal LM, labels are the same as input_ids
-    # We'll mask the prompt tokens in the loss calculation later
+    # Create labels with same length as input_ids
     labels = []
     for i, (prompt, target) in enumerate(zip(examples["prompt"], examples["target"])):
         # Tokenize prompt separately to know where to mask
         prompt_formatted = f"<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
         prompt_tokens = tokenizer(prompt_formatted, add_special_tokens=False)["input_ids"]
         
-        # Create labels: -100 for prompt tokens (ignored in loss), actual tokens for target
-        input_ids = model_inputs["input_ids"][i]
-        label = [-100] * len(prompt_tokens) + input_ids[len(prompt_tokens):]
+        # Full sequence length to match input_ids
+        full_length = len(model_inputs["input_ids"][i])
         
-        # Pad or truncate to match input length
-        if len(label) < len(input_ids):
-            label.extend(input_ids[len(label):])
-        elif len(label) > len(input_ids):
-            label = label[:len(input_ids)]
-            
+        # Start with all -100s (ignore all)
+        label = [-100] * full_length
+        
+        # Only include the target tokens in loss calculation
+        target_start = len(prompt_tokens)
+        target_end = len(model_inputs["input_ids"][i])
+        
+        # Copy target tokens
+        for j in range(target_start, target_end):
+            if j < full_length:  # Safety check
+                label[j] = model_inputs["input_ids"][i][j]
+        
         labels.append(label)
     
     model_inputs["labels"] = labels
@@ -194,8 +198,9 @@ def main():
     # 4. Data collator: will pad to longest in batch and create attention masks/labels
     data_collator = DataCollatorForLanguageModeling(
         tokenizer=tokenizer,
-        mlm=False,  # We're doing causal LM, not masked LM
-        pad_to_multiple_of=8  # helps with tensor core alignment
+        mlm=False,
+        pad_to_multiple_of=8,
+        padding=True
     )
 
     # 5. Initialize Trainer
