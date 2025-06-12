@@ -83,7 +83,7 @@ def main():
         warmup_steps=100,
         lr_scheduler_type="cosine",
         weight_decay=0.01,
-        fp16=True,
+        fp16=False,
         dataloader_num_workers=4,
         remove_unused_columns=False,
         report_to=None,  # Changed from "none" to None

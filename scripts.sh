@@ -4,7 +4,7 @@
 #SBATCH --ntasks-per-node=1        # number of tasks per node
 #SBATCH --gpus-per-task=1          # request 1 GPU
 #SBATCH --cpus-per-task=8          # number of CPUs per task
-#SBATCH --mem=64G                  # memory per node (increased for 8B model)
+#SBATCH --mem=64G                   # memory per node (increased for 8B model)
 #SBATCH -t 24:00:00                # job time limit <hr:min:sec>
 #SBATCH -A tb901117                # specify your account ID
 #SBATCH -J qwen_finetune           # job name
