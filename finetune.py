@@ -83,7 +83,7 @@ def main():
         warmup_steps=100,
         lr_scheduler_type="cosine",
         weight_decay=0.01,
-        fp16=True,  # Changed back to True for memory efficiency
+        bf16=True,  # Use bfloat16 instead of fp16 for better compatibility
         dataloader_num_workers=2,  # Reduced workers to save memory
         remove_unused_columns=False,
         report_to=None,  # Changed from "none" to None
@@ -93,7 +93,7 @@ def main():
         greater_is_better=False,
         dataloader_pin_memory=False,  # Disable pin memory to save GPU memory
         gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
-        optim="adamw_torch_fused",  # Use fused optimizer for efficiency
+        optim="adamw_torch",  # Use standard AdamW for better compatibility with gradient checkpointing
     )
 
     # 1. Load datasets
