@@ -16,9 +16,9 @@ ml Mamba/23.11.0-0
 
 conda activate test
 
-export HF_HUB_CACHE="/.cache/huggingface"
-export HF_HOME="/.cache/huggingface"
-export HF_DATASETS_CACHE="/.cache/huggingface"
+export HF_HUB_CACHE="~/.cache/huggingface"
+export HF_HOME="~/.cache/huggingface"
+export HF_DATASETS_CACHE="~/.cache/huggingface"
 
 # Enable offline mode to prevent additional downloads during training
 export HF_DATASETS_OFFLINE=1

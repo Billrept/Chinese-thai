@@ -101,44 +101,61 @@ def main():
     model_name = "Qwen/Qwen3-8B"
     cache_dir = os.path.expanduser(os.environ.get("HF_HUB_CACHE", "~/.cache/huggingface"))
     
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(
-            model_name, 
-            trust_remote_code=True, 
-            cache_dir=cache_dir,
-            local_files_only=True
-        )
-    except (OSError, ValueError):
-        print("Local tokenizer files not found, trying online...")
+    # Try direct path to cached model first
+    local_model_path = os.path.join(cache_dir, "models--Qwen--Qwen3-8B")
+    
+    if os.path.exists(local_model_path):
+        print(f"Loading model from local path: {local_model_path}")
+        snapshots_dir = os.path.join(local_model_path, "snapshots")
+        if os.path.exists(snapshots_dir):
+            # Get the first (and likely only) snapshot directory
+            snapshot_dirs = [d for d in os.listdir(snapshots_dir) if os.path.isdir(os.path.join(snapshots_dir, d))]
+            if snapshot_dirs:
+                actual_model_path = os.path.join(snapshots_dir, snapshot_dirs[0])
+                print(f"Using snapshot path: {actual_model_path}")
+                
+                tokenizer = AutoTokenizer.from_pretrained(
+                    actual_model_path,
+                    trust_remote_code=True,
+                    local_files_only=True
+                )
+                
+                # Add padding token if it doesn't exist
+                if tokenizer.pad_token is None:
+                    tokenizer.pad_token = tokenizer.eos_token
+                
+                model = AutoModelForCausalLM.from_pretrained(
+                    actual_model_path,
+                    trust_remote_code=True,
+                    torch_dtype=torch.float16,
+                    device_map="auto",
+                    local_files_only=True
+                )
+            else:
+                raise ValueError("No snapshot directories found in cached model")
+        else:
+            raise ValueError("No snapshots directory found in cached model")
+    else:
+        # Fallback to original method if local cache not found
+        print(f"Local cache not found at {local_model_path}, trying original method...")
         tokenizer = AutoTokenizer.from_pretrained(
             model_name,
             trust_remote_code=True,
             cache_dir=cache_dir,
             local_files_only=False
         )
-
-    # Add padding token if it doesn't exist
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-    
-    try:
+        
+        # Add padding token if it doesn't exist
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+        
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             trust_remote_code=True,
             torch_dtype=torch.float16,
             device_map="auto",
             cache_dir=cache_dir,
-            local_files_only=True  # Try local first
-        )
-    except (OSError, ValueError):
-        print("Local model files not found, trying online...")
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            trust_remote_code=True,
-            torch_dtype=torch.float16,
-            device_map="auto",
-            cache_dir=cache_dir,
-            local_files_only=False  # Allow online download
+            local_files_only=False
         )
 
     # 3. Preprocess / tokenize
