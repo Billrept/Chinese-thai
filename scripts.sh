@@ -31,5 +31,8 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 export CUDA_VISIBLE_DEVICES=0
 export TOKENIZERS_PARALLELISM=false
 
+# Memory optimization settings
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
 # Run the fine-tuning script
 srun python3 finetune.py 

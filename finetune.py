@@ -72,25 +72,28 @@ def main():
         output_dir="./qwen_finetuned",
         per_device_train_batch_size=1,
         per_device_eval_batch_size=1,
-        gradient_accumulation_steps=8,
+        gradient_accumulation_steps=16,  # Increased to maintain effective batch size
         eval_strategy="steps",  # Changed from evaluation_strategy
-        eval_steps=500,
+        eval_steps=1000,  # Reduced evaluation frequency to save memory
         save_strategy="steps",
-        save_steps=1000,
-        logging_steps=50,
+        save_steps=2000,  # Reduced save frequency
+        logging_steps=100,
         learning_rate=5e-6,
         num_train_epochs=3,
         warmup_steps=100,
         lr_scheduler_type="cosine",
         weight_decay=0.01,
-        fp16=False,
-        dataloader_num_workers=4,
+        fp16=True,  # Changed back to True for memory efficiency
+        dataloader_num_workers=2,  # Reduced workers to save memory
         remove_unused_columns=False,
         report_to=None,  # Changed from "none" to None
-        save_total_limit=3,
-        load_best_model_at_end=True,
+        save_total_limit=2,  # Reduced to save disk space
+        load_best_model_at_end=False,  # Disabled to save memory
         metric_for_best_model="eval_loss",
         greater_is_better=False,
+        dataloader_pin_memory=False,  # Disable pin memory to save GPU memory
+        gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
+        optim="adamw_torch_fused",  # Use fused optimizer for efficiency
     )
 
     # 1. Load datasets
