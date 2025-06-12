@@ -133,7 +133,7 @@ def main():
                     actual_model_path,
                     trust_remote_code=True,
                     torch_dtype=torch.bfloat16,  # Match the training dtype
-                    device_map="auto",
+                    device_map={"": 0},  # Force all model to single GPU
                     local_files_only=True,
                     low_cpu_mem_usage=True,  # Reduce CPU memory usage during loading
                 )
@@ -159,7 +159,7 @@ def main():
             model_name,
             trust_remote_code=True,
             torch_dtype=torch.bfloat16,
-            device_map="auto",
+            device_map={"": 0},  # Force all model to single GPU
             cache_dir=cache_dir,
             local_files_only=False
         )
