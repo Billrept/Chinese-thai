@@ -72,7 +72,7 @@ def main():
         output_dir="./qwen_finetuned",
         per_device_train_batch_size=1,
         per_device_eval_batch_size=1,
-        gradient_accumulation_steps=16,  # Increased to maintain effective batch size
+        gradient_accumulation_steps=8,  # Reduced to save memory
         eval_strategy="steps",  # Changed from evaluation_strategy
         eval_steps=1000,  # Reduced evaluation frequency to save memory
         save_strategy="steps",
@@ -93,7 +93,7 @@ def main():
         greater_is_better=False,
         dataloader_pin_memory=False,  # Disable pin memory to save GPU memory
         gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
-        optim="adamw_torch",  # Use standard AdamW for better compatibility with gradient checkpointing
+        optim="adafactor",  # Use Adafactor optimizer which is more memory efficient
         ddp_find_unused_parameters=False,  # Optimize for single GPU
         max_grad_norm=1.0,  # Add gradient clipping for stability
     )
@@ -166,11 +166,18 @@ def main():
 
     # 3. Preprocess / tokenize
     model.resize_token_embeddings(len(tokenizer))  # just in case
+    
+    # Clear any cached memory
+    torch.cuda.empty_cache()
+    
+    # Enable model parallelism for large models
+    if hasattr(model, 'gradient_checkpointing_enable'):
+        model.gradient_checkpointing_enable()
 
     preprocess_fn = lambda examples: preprocess_function(
         examples,
         tokenizer=tokenizer,
-        max_length=2048,    # Reasonable length for fine-tuning
+        max_length=1024,    # Reduced length to save memory
     )
 
     train_tok = train_dataset.map(
