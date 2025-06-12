@@ -99,6 +99,7 @@ def main():
 
     # 2. Load tokenizer & model
     model_name = "Qwen/Qwen3-8B"
+    cache_dir = os.environ.get("HF_HUB_CACHE", "~/.cache/huggingface")
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=cache_dir)
     
     # Add padding token if it doesn't exist
