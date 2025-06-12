@@ -99,7 +99,7 @@ def main():
 
     # 2. Load tokenizer & model
     model_name = "Qwen/Qwen3-8B"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, cache_dir=cache_dir)
     
     # Add padding token if it doesn't exist
     if tokenizer.pad_token is None:
@@ -108,8 +108,9 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         trust_remote_code=True,
-        torch_dtype=torch.float16,      # use fp16 on GPU
-        device_map="auto"               # automatically place model shards on available GPUs
+        torch_dtype=torch.float16,
+        device_map="auto",
+        cache_dir=cache_dir
     )
 
     # 3. Preprocess / tokenize
